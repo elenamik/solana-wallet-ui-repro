@@ -1,3 +1,4 @@
+'use client'
 import { WalletUi ,createSolanaDevnet, createSolanaMainnet} from '@wallet-ui/react';
 
 const config = {

@@ -1,19 +1,20 @@
 'use client'
-import { useWalletUi, useWalletUiWallets } from "@wallet-ui/react";
+import { useWalletUi, useWalletUiWallets, useWalletUiSigner, WalletUiDropdown } from "@wallet-ui/react";
 
 export default function Home() {
-  const walletUi = useWalletUi()
+  const { account} = useWalletUi()
+  console.log('account', account)
+
   const wallets = useWalletUiWallets()
+  console.log('wallets', wallets)
+  const signer = useWalletUiSigner();
+
   return (
     <div>
       <main>
         <div>
-          <h2 className="text-2xl font-bold">useWalletUI</h2>
-          <pre className="text-sm font-mono">{JSON.stringify(walletUi, null, 2)}</pre>      
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold">useWalletUiWallets</h2>
-          <pre className="text-sm font-mono">{JSON.stringify(wallets, null, 2)}</pre>
+          <h2 className="text-2xl font-bold">Test app</h2>
+          <WalletUiDropdown />
         </div>
       </main>
     </div>
